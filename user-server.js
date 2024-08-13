@@ -14,7 +14,7 @@ const createUser = async (call, callback) => {
         if (!err) callback(null, { message: "Data inserted successfully!" });
         else callback(err, null);
     });
-}
+};
 
 const grpcServer = new grpc.Server();
 grpcServer.addService(userProto.UserService.service, { createUser: createUser });
